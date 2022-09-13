@@ -31,32 +31,72 @@ The company (HR department to be specific) could analyze which predictors have a
 The company could retain the best employees who make the organizations more profitable.
 
 
+---
+
 ### Findings (Exploratory Data Analysis/EDA)
 Relationship between =
 
 - Age & Attrition= The youngster tends toward an attrition
+
+![pareto chart](./assets/attrition_v_age.png)
+
 - MonthlyIncome & Attrition = The lower income tends toward an attrition
+
+![pareto chart](./assets/attrition_v_montlyincome.png)
+
 - DistanceFromHome & Attrition = No clear relationship between these columns
+
+![pareto chart](./assets/attrition_v_distancefromhome.png)
+
 - PercentSalaryHike & Attrition = The lower percent of salary hike tends toward an attrition
+
+![pareto chart](./assets/attrition_v_percentsalaryhike.png)
+
 - YearsAtCompany & Attrition = The lower years at company tends toward an attrition
+
+![pareto chart](./assets/attrition_v_yearsatcompany.png)
+
 - YearsSinceLastPromotion & Attrition = The lower years since last promotion tends toward an attrition
+
+![pareto chart](./assets/attrition_v_yearsincelastpromotion.png)
+
 - WorkLifeBalance & Attrition = The lower WorkLifeBalance number tends toward an attrition
+
+![pareto chart](./assets/worklifebalance.png)
+
 - EnvironmentSatisfaction & Attrition = The lower EnvironmentSatisfaction tends toward an attrition
+
+![pareto chart](./assets/environmentsatisfaction.png)
+
 - JobRole & Attrition = Any jobrole related to "Sales" tends toward an attrition
+
+![pareto chart](./assets/jobrole.png)
+
 - OverTime & Attrition = The one who feels overtime in their work tends toward an attrition
 
+![pareto chart](./assets/overtime.png)
 
 These insights above could be recommendations of programs or treatments to lower the number of employee attrition problems. From the insights, the improvements or changes could be made on the company itself & the employee. The improvements we could make on the company itself such as, programs to improve work life balance & working environment. Then the changes we could make on the employees are related to the employee recruitment process. In order to decrease the employee attrition problem, we could include criteria such as "we need the experienced person in the field", "we need the one who could work under pressure" (because the number of overtime is high) However, what are the most important features/predictors for the problem, so we could make a program priority list? Let's find top 5 of predictors!
+
+
+---
 
 ### Model
 - Baseline Model = Logistic Regression
 - Proposed Models = SVC, DecisionTreeClassifier, AdaBoostClassifier, RandomForestClassifier, ExtraTreesClassifier, GradientBoostingClassifier
 - Benchmark parameter = AUC
+- AUC of baseline & proposed models
+
+![pareto chart](./assets/crossvalmodel.PNG)
 
 
 From the graph show AUC of each proposed model, proceeds to use a RandomForestClassifier for the final model.
 - Hyperparameter Tuning = RandomForestClassifier
 - Final Model AUC = 0.74
+
+![pareto chart](./assets/finalmodelauc.PNG)
+
+---
 
 ### Feature Importance
 Top 5 feature importances =
@@ -66,6 +106,11 @@ Top 5 feature importances =
 3. TotalWorkingYears
 4. DailyRate
 5. HourlyRate
+
+![pareto chart](./assets/featureimportances.PNG)
+
+---
+
 
 ### Recommendation
 I read & found some interesting articles[1], [2]. They show that the employee attrition problems are unique problems, and then they need unique approaches to address them. The problems in one company could be different with others. To address the employee attrition problem looking from the top 5 feature importances in the model, the company should =
